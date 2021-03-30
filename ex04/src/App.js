@@ -1,6 +1,6 @@
 //src/App.js
-import React, { Component } from "react";
-import Table from "./Table";
+import React, { Component } from 'react';
+import Table from './Table';
 
 class App extends Component {
   state = {
@@ -21,20 +21,23 @@ class App extends Component {
   };
 
   removeCharacter = (index) => {
-    const {characters} = this.state;
+    const { characters } = this.state;
 
     this.setState({
       characters: characters.filter((character, i) => {
         return i !== index;
-      })
-    })
-  }
+      }),
+    });
+  };
 
   render() {
     const { characters } = this.state;
     return (
       <div className="container">
-        <Table characterData={characters} removeCharacter={this.removeCharacter} />
+        <Table
+          characterData={characters}
+          removeCharacter={this.removeCharacter}
+        />
       </div>
     );
   }
